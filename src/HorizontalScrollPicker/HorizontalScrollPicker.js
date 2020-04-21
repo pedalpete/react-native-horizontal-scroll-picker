@@ -19,11 +19,6 @@ class HorizontalScrollPicker extends Component {
       selected: props.initialIdx,
     };
 
-    this.state = {
-      size,
-      selected: props.initialIdx,
-    };
-
     this.scrollView = null;
     this.scrollOffset = 0;
     this.isParking = false;
