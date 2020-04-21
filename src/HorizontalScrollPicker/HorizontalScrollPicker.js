@@ -142,6 +142,7 @@ class HorizontalScrollPicker extends Component {
             paddingLeft: size * sideItems,
             paddingRight: size * sideItems,
           }}
+          showsHorizontalScrollIndicator={false}
         >
           {items.map((item, idx) => this._renderItem(item, idx))}
         </ScrollView>
