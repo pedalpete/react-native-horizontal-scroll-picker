@@ -13,8 +13,11 @@ class HorizontalScrollPicker extends Component {
   constructor(props) {
     super(props);
 
-    const size = width / props.rowItems;
-    const initialIdx = props.initialIdx;
+    this.initialIdx = props.initialIdx;
+    this.state = {
+      size: width / rowItems,
+      selected: props.initialIdx,
+    };
 
     this.state = {
       size,
@@ -27,7 +30,11 @@ class HorizontalScrollPicker extends Component {
   }
 
   _calculateLayout = () => {
-    this.scrollView.scrollTo({ x: initialIdx * size, y: 0, animated: false });
+    this.scrollView.scrollTo({
+      x: this.initialIdx * this.state.size,
+      y: 0,
+      animated: false,
+    });
   };
 
   _renderItem = (item, idx) => {
